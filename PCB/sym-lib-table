@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "stirlling-measurement-PCB-symbollibrary") (type "KiCad") (uri "${KIPRJMOD}/stirlling-measurement-PCB-symbollibrary.kicad_sym") (options "") (descr ""))
+)

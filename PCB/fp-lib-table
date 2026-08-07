@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "stirling-measurement-PCB-footprintlibrary") (type "KiCad") (uri "${KIPRJMOD}/stirling-measurement-PCB-footprintlibrary.pretty") (options "") (descr ""))
+)
