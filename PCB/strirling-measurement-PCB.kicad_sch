@@ -325,6 +325,209 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:LED_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at -1.27 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "LED_Small"
+				(at -4.445 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Light emitting diode, small symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "LED diode light-emitting-diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LED_Small_0_1"
+				(polyline
+					(pts
+						(xy -0.762 -1.016) (xy -0.762 1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy -0.508 1.27) (xy -0.254 1.27) (xy -0.508 1.27) (xy -0.508 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27) (xy 0 1.778) (xy 0.254 1.778) (xy 0 1.778) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy -0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_Small_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.778)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.778)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R_Small"
 			(pin_numbers
 				(hide yes)
@@ -1694,6 +1897,18 @@
 		(uuid "361ade46-e1c0-4fff-a3aa-e3c29007d17e")
 	)
 	(rectangle
+		(start 218.44 15.24)
+		(end 281.94 54.61)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "98f50c91-c07c-4a4a-a2cb-be8fb1520c35")
+	)
+	(rectangle
 		(start 15.24 15.24)
 		(end 110.49 96.52)
 		(stroke
@@ -1726,6 +1941,17 @@
 			(justify left bottom)
 		)
 		(uuid "567545f7-c072-4f65-b5a1-d3176daab5cb")
+	)
+	(text "LEDs"
+		(exclude_from_sim no)
+		(at 219.202 53.848 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "e08208da-8acb-4731-8f38-e45b073663a9")
 	)
 	(junction
 		(at 149.86 34.29)
@@ -1789,6 +2015,26 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 27.94) (xy 255.27 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d774f85-c2e8-41ef-9731-0033d7e030fe")
+	)
+	(wire
+		(pts
+			(xy 251.46 43.18) (xy 255.27 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0da113f4-64f2-4996-84ac-1b5b4b9baa85")
+	)
+	(wire
+		(pts
 			(xy 147.32 34.29) (xy 149.86 34.29)
 		)
 		(stroke
@@ -1796,6 +2042,16 @@
 			(type default)
 		)
 		(uuid "0df60081-35f1-4bbb-82c9-e6257af1f225")
+	)
+	(wire
+		(pts
+			(xy 260.35 43.18) (xy 261.62 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e18e3de-2e26-4c70-89eb-ee31387312be")
 	)
 	(wire
 		(pts
@@ -2209,6 +2465,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 27.94) (xy 261.62 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dad1274d-e535-4f5e-ab9c-9fadf30e9d9e")
+	)
+	(wire
+		(pts
 			(xy 200.66 24.13) (xy 200.66 25.4)
 		)
 		(stroke
@@ -2237,6 +2503,16 @@
 		)
 		(uuid "fcde90ad-44bb-4c4a-aa21-d711f65fdfb2")
 	)
+	(wire
+		(pts
+			(xy 243.84 27.94) (xy 246.38 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fff47b24-d9ba-4f47-b4b3-a69c2917716f")
+	)
 	(label "NTC5_ADC"
 		(at 204.47 58.42 0)
 		(effects
@@ -2256,6 +2532,26 @@
 			(justify left bottom)
 		)
 		(uuid "0d596abf-0a98-4dc1-b171-304c735c1461")
+	)
+	(label "USER1LED_GPIO"
+		(at 243.84 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "746bda4c-090f-4648-b1a3-9f7374ef3a61")
+	)
+	(label "USER2LED_GPIO"
+		(at 243.84 43.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "aa0d383a-4e64-4253-b8a8-912d83810c59")
 	)
 	(label "NTC4_ADC"
 		(at 204.47 34.29 0)
@@ -2476,7 +2772,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "stirling-measurement-PCB-footprintlibrary:JST_S2B-ZR_LF__SN_"
 			(at 173.99 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -2634,7 +2930,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "stirling-measurement-PCB-footprintlibrary:JST_S2B-ZR_LF__SN_"
 			(at 173.99 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -2793,7 +3089,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 134.62 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -3030,7 +3326,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 134.62 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -3079,6 +3375,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_Small")
+		(at 257.81 27.94 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4160b390-559c-432a-bd9a-6c36b14d5995")
+		(property "Reference" "D1"
+			(at 257.7465 21.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "USER1"
+			(at 257.7465 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm_FlatTop"
+			(at 257.81 27.94 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 257.81 27.94 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode, small symbol"
+			(at 257.81 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 257.81 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "96efe435-fcee-4027-bcb9-b83309a87127")
+		)
+		(pin "1"
+			(uuid "ee2d3f12-dd7f-410b-9547-bcdbde2021bf")
+		)
+		(instances
+			(project "strirling-measurement-PCB"
+				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 149.86 52.07 0)
 		(unit 1)
@@ -3112,7 +3499,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 149.86 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -3155,6 +3542,85 @@
 			(project "strirling-measurement-PCB"
 				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 261.62 43.18 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48e081a9-b3b9-4b31-8744-b93bc43f26e4")
+		(property "Reference" "#PWR017"
+			(at 267.97 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 265.43 43.1799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.62 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 261.62 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 261.62 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d49b8339-7229-435e-8a67-03a636c25e52")
+		)
+		(instances
+			(project "strirling-measurement-PCB"
+				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -3549,6 +4015,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_Small")
+		(at 257.81 43.18 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "55e1d15a-ed5e-4ba7-975b-985118d7e96d")
+		(property "Reference" "D2"
+			(at 257.7465 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "USER2"
+			(at 257.7465 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm_FlatTop"
+			(at 257.81 43.18 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 257.81 43.18 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode, small symbol"
+			(at 257.81 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 257.81 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b32dd4dc-5c03-4b35-be13-d06a9150eb54")
+		)
+		(pin "1"
+			(uuid "f875e215-16a3-436b-b56b-0ced2be5edce")
+		)
+		(instances
+			(project "strirling-measurement-PCB"
+				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 134.62 24.13 0)
 		(unit 1)
@@ -3659,7 +4216,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 185.42 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -3741,7 +4298,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 149.86 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -3901,7 +4458,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 134.62 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -3981,7 +4538,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "stirling-measurement-PCB-footprintlibrary:JST_S2B-ZR_LF__SN_"
 			(at 123.19 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -4061,7 +4618,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 195.58 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -4219,7 +4776,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 195.58 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -4299,7 +4856,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "stirling-measurement-PCB-footprintlibrary:JST_S2B-ZR_LF__SN_"
 			(at 123.19 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4427,6 +4984,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 248.92 27.94 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e78f8f8-1925-4775-89c3-27af49566928")
+		(property "Reference" "R11"
+			(at 248.92 22.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 248.92 25.4 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 248.92 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 248.92 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "1e53c338-8a7a-4193-bd89-8d13f9d2b659")
+		)
+		(pin "1"
+			(uuid "e1cf0532-f66a-40af-a337-0a6df8625bfc")
+		)
+		(instances
+			(project "strirling-measurement-PCB"
+				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 200.66 52.07 0)
 		(unit 1)
@@ -4460,7 +5097,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 200.66 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -4510,6 +5147,86 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
+		(at 248.92 43.18 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a2064f8c-9836-4215-b531-5ca552f3f8be")
+		(property "Reference" "R12"
+			(at 248.92 38.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 248.92 40.64 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 248.92 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 248.92 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "87f9e9ac-86f1-4980-a706-01feca515a75")
+		)
+		(pin "1"
+			(uuid "67e6db0b-26ba-4e11-a0fa-aa2f286923e6")
+		)
+		(instances
+			(project "strirling-measurement-PCB"
+				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
 		(at 144.78 34.29 270)
 		(unit 1)
 		(body_style 1)
@@ -4540,7 +5257,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 144.78 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -4622,7 +5339,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 200.66 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -4780,7 +5497,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 144.78 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -4823,6 +5540,85 @@
 			(project "strirling-measurement-PCB"
 				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 261.62 27.94 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cbaacea9-fe4a-4233-b7fe-b6ea952f8560")
+		(property "Reference" "#PWR016"
+			(at 267.97 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 265.43 27.9399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.62 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 261.62 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 261.62 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8fba81aa-244c-4d0b-a7d2-21d7d7c89ce7")
+		)
+		(instances
+			(project "strirling-measurement-PCB"
+				(path "/b64077d9-ab34-41db-8b4c-cc2b5285867f"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -4940,7 +5736,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 185.42 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5020,7 +5816,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 144.78 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -5100,7 +5896,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "stirling-measurement-PCB-footprintlibrary:JST_S2B-ZR_LF__SN_"
 			(at 123.19 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -5260,7 +6056,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 149.86 27.94 0)
 			(hide yes)
 			(show_name no)
