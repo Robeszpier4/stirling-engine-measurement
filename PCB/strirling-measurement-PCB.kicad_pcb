@@ -152,9 +152,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "gerbersv1/")
 		)
 	)
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
@@ -7839,6 +7839,14 @@
 		(uuid "cb3ebf32-2885-465e-9572-acfaae263069")
 	)
 	(segment
+		(start 86.7215 98.73)
+		(end 90.31 98.73)
+		(width 0.8)
+		(layer "F.Cu")
+		(net "/USER2LED_GPIO")
+		(uuid "40137376-cd97-4f43-9692-dd5164d0b7cd")
+	)
+	(segment
 		(start 113.128 91.11)
 		(end 112.154 91.11)
 		(width 0.5)
@@ -7965,14 +7973,6 @@
 		(layer "F.Cu")
 		(net "/GAP-OPTO_OUT")
 		(uuid "9a11bb2a-3d6d-4024-b93a-dc0d6267423d")
-	)
-	(segment
-		(start 86.7215 98.73)
-		(end 90.31 98.73)
-		(width 0.8)
-		(layer "F.Cu")
-		(net "/USER2LED_GPIO")
-		(uuid "40137376-cd97-4f43-9692-dd5164d0b7cd")
 	)
 	(zone
 		(layers "*.Mask")
