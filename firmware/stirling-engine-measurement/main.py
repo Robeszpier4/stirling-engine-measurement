@@ -1,5 +1,14 @@
 from machine import ADC, Pin
 import time
+import math
+
+# convert temperature from ADC
+def convertTemperature(ADCvalue, R0, beta, rReference, T0):
+    rNTC = (rReference) / ((65535/ADCvalue) - 1)
+
+    temperature = 1 / ((1 / T0) + (1 / beta) * math.log(rNTC / R0))
+
+    return temperature
 
 # samples for 20 ms, returns the average of the samples
 def readNTC(NTCadc):
@@ -11,91 +20,63 @@ def readNTC(NTCadc):
         ADCsum += NTCadc.read_u16()
         numOfSamples += 1
 
-    return ADCsum / numOfSamples
+    avgADC = ADCsum / numOfSamples
+
+    return convertTemperature(avgADC, 10000, 3380, 3900, 298.15)
 
 def optoInterruptHandler(pin):
-    global optoEvents1, optoEventIDX1, optoEvents2, optoEventIDX2, optoActive, optoEventBufferOverflow
+    global firstInterruptReceived, lastInterruptMS, freqPacket
 
-    eventTimestamp = time.ticks_ms()
+    if firstInterruptReceived == True:
+        currentTimeMS = time.ticks_ms()
 
-    if optoActive == 1:
-        if optoEventIDX1 < 100:
-            optoEvents1[optoEventIDX1] = eventTimestamp
-            optoEventIDX1 += 1
-        else:
-            optoEventBufferOverflow = True
+        if time.ticks_diff(currentTimeMS, lastInterruptMS) > 20:
+            freq = 1 / (time.ticks_diff(currentTimeMS, lastInterruptMS) / 1000) # calculating freq (1 / sec)
+    
+            freqTimestamp = (currentTimeMS + lastInterruptMS) / 2 # timestamp for the freq, avg of the last and the current time
+    
+            lastInterruptMS = currentTimeMS
+    
+            freqPacket[0] = freqTimestamp
+            freqPacket[1] = freq
+
+            userLed1.toggle()
     else:
-        if optoEventIDX2 < 100:
-            optoEvents2[optoEventIDX2] = eventTimestamp
-            optoEventIDX2 += 1
-        else:
-            optoEventBufferOverflow = True
-            
+        lastInterruptMS = time.ticks_ms()
+        firstInterruptReceived = True
 
+        userLed1.toggle()
+            
 
 NTC1 = ADC(Pin(26))
 NTC2 = ADC(Pin(27))
 NTC3 = ADC(Pin(28))
 
-userLed1 = Pin(6, Pin.OUT) # indicates the overflow of the opto event buffer
-userLed2 = Pin(10, Pin.OUT)
+userLed1 = Pin(4, Pin.OUT)
+userLed2 = Pin(7, Pin.OUT)
 
-# contains the timestamps of optoevents in ms, max 100 events, if there is no more space but event occured user LED 1 indictaes it
-optoEvents1 = [0] * 100
-optoEvents2 = [0] * 100
-optoEventIDX1 = 0
-optoEventIDX2 = 0
-# contains the number of the opto buffer which is currently written by handler
-optoActive = 1
-optoEventBufferOverflow = False
+firstInterruptReceived = False
+lastInterruptMS = 0
+freqPacket = [-1.0, -1.0] # timeMS, freq
 
 opto = Pin(15, Pin.IN)
 opto.irq(trigger=Pin.IRQ_RISING, handler=optoInterruptHandler)
 
-startOfMainloopMS = time.ticks_ms()
-
 while True:
-    # measuring temperature, and logging it
-    NTC1_ADCval = readNTC(NTC1)
-    NTC1_ADCvalMs = time.ticks_ms() - startOfMainloopMS - 10
+    # measuring temperature
+    userLed2.value(1)
 
-    NTC2_ADCval = readNTC(NTC2)
-    NTC2_ADCvalMs = time.ticks_ms() - startOfMainloopMS - 10
+    NTC1_temp = readNTC(NTC1)
+    NTC1_tempMs = time.ticks_ms() - 10
 
-    NTC3_ADCval = readNTC(NTC3)
-    NTC3_ADCvalMs = time.ticks_ms() - startOfMainloopMS - 10
+    NTC2_temp = readNTC(NTC2)
+    NTC2_tempMs = time.ticks_ms() - 10
 
-    print(f"temperature|{NTC1_ADCval}#{NTC1_ADCvalMs}|{NTC2_ADCval}#{NTC2_ADCvalMs}|{NTC3_ADCval}#{NTC3_ADCvalMs}|end")
+    NTC3_temp = readNTC(NTC3)
+    NTC3_tempMs = time.ticks_ms() - 10
 
-    # logging all the opto event timestamps
-    if optoEventBufferOverflow == False:
-        if optoActive == 1:
-            optoActive = 2
+    userLed2.value(0)
 
-            print("opto|", end = "")
-
-            for i in range(0, optoEventIDX1):
-                print(f"{optoEvents1[i] - startOfMainloopMS}|", end = "")
-
-            print("end")
-
-            optoEventIDX1 = 0
-        else:
-            optoActive = 1
-
-            print("opto|", end = "")
-
-            for i in range(0, optoEventIDX2):
-                print(f"{optoEvents2[i] - startOfMainloopMS}|", end = "")
-
-            print("end")
-
-            optoEventIDX2 = 0
-    else:
-        userLed1.value(1)
-
-        while(1):
-            print("error|Opto event buffer overflow!")
-            time.sleep_ms(1000)
+    print(f"start|{NTC1_temp}#{NTC1_tempMs}|{NTC2_temp}#{NTC2_tempMs}|{NTC3_temp}#{NTC3_tempMs}|{freqPacket[1]}#{freqPacket[0]}|stop")
 
     time.sleep_ms(1000)
